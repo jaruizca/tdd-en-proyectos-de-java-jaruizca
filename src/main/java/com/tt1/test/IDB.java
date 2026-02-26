@@ -8,6 +8,7 @@ public interface IDB {
     void updateTodo(Integer id, ToDo todo);
     void deleteTodo(Integer id);
     Integer createTodo(ToDo todo);
+    List<ToDo> getTodos();
 
     // Email
     List<String> getEmails();

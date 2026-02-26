@@ -1,5 +1,6 @@
 package com.tt1.test;
 
+import com.tt1.test.mock.MailerStub;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

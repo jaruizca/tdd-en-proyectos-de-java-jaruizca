@@ -1,10 +1,13 @@
-package com.tt1.test;
+package com.tt1.test.mock;
+
+import com.tt1.test.IDB;
+import com.tt1.test.ToDo;
 
 import java.util.List;
 import java.util.Map;
 
 public class DBStub implements IDB {
-    private Map<Integer,ToDo> tabla;
+    private Map<Integer, ToDo> tabla;
 
 
     @Override

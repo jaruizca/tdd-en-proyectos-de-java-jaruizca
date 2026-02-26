@@ -1,4 +1,6 @@
-package com.tt1.test;
+package com.tt1.test.mock;
+
+import com.tt1.test.IMailer;
 
 public class MailerStub implements IMailer {
     @Override

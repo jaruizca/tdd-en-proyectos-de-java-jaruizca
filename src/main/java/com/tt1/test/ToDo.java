@@ -34,4 +34,12 @@ public class ToDo {
     public Date getFechaLimite() {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
+
+    public boolean getCompletado() {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
+
+    public void setCompletado(boolean completado) {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
 }

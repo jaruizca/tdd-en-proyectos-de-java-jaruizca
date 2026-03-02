@@ -42,6 +42,9 @@ class IDBTest {
         t1.setNombre("todo1");
         t2.setNombre("todo2");
         t3.setNombre("todo3");
+        t1.setId(1);
+        t2.setId(2);
+        t3.setId(3);
 
         db.createTodo(t1);
         db.createTodo(t2);

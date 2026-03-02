@@ -2,35 +2,12 @@ package com.tt1.test;
 
 import com.tt1.test.muck.DBFake;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class IRepositorioTest {
-    IRepositorio repo;
-
+public class IRepositorioTest extends IRepositorioTestTemplate{
+    IDB db;
+    @Override
     @BeforeEach
     void setup() {
-        repo = new Repositorio(new DBFake());
-    }
-
-    @Test
-    void obtenerEmails() {
-        String mail = "mymail@email.com";
-        repo.guardarEmail(mail);
-        assertTrue(repo.obtenerEmails().contains(mail));
-    }
-
-    @Test
-    void obtenerTodo() {
-        ToDo todo = new ToDo();
-        todo.setNombre("Paco");
-        todo.setId(1);
-
-        repo.guardarTodo(todo);
-        assertEquals(todo, repo.obtenerTodo(1));
-
-        repo.marcarToDoComoCompletado(1);
-        assertTrue(repo.obtenerTodo(1).getCompletado());
+        db = new DBFake();
     }
 }

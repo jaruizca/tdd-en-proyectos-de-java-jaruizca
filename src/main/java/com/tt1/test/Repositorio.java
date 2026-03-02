@@ -1,5 +1,7 @@
 package com.tt1.test;
 
+import java.util.List;
+
 public class Repositorio implements IRepositorio {
 
     public Repositorio(IDB db) { }
@@ -17,6 +19,11 @@ public class Repositorio implements IRepositorio {
     }
 
     public void guardarEmail(String email) {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
+
+    @Override
+    public List<String> obtenerEmails() {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 }

@@ -27,6 +27,11 @@ public class DBStub implements IDB {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 
+    @Override
+    public List<ToDo> getTodos() {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
+
     // Email
     @Override
     public List<String> getEmails() {

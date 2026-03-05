@@ -5,6 +5,6 @@ public class MailerStub implements IMailer {
     public boolean enviarEmail(String direccion, String mensaje) {
         System.out.println("enviado a: " + direccion);
         System.out.println("el mensaje: " + mensaje);
-        return true;
+        return !direccion.isEmpty();
     }
 }

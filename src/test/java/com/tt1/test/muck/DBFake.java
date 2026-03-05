@@ -6,54 +6,58 @@ import com.tt1.test.ToDo;
 import java.util.List;
 
 public class DBFake implements IDB {
+    ToDo storedToDo = null;
+    String storedEmail = "";
 
     @Override
     public ToDo getTodo(Integer id) {
-        return null;
+        return storedToDo;
     }
 
     @Override
     public void updateTodo(Integer id, ToDo todo) {
-
+        storedToDo = todo;
     }
 
     @Override
     public void deleteTodo(Integer id) {
-
+        storedToDo = null;
     }
 
     @Override
     public Integer createTodo(ToDo todo) {
-        return 1;
+        storedToDo = todo;
+        return todo.getId();
     }
 
     @Override
     public List<ToDo> getTodos() {
-        ToDo t = new ToDo();
-        t.setNombre("Paco");
-        t.setId(1);
-        t.setCompletado(true);
-        return List.of(t);
+        return List.of(storedToDo);
     }
 
     @Override
     public List<String> getEmails() {
-        return List.of("mymail@email.com");
+        return List.of(storedEmail);
     }
 
     @Override
     public String getEmail(Integer id) {
-        return "mymail@email.com";
+        return storedEmail;
     }
 
     @Override
-    public void updateEmail(Integer id, String email) { }
+    public void updateEmail(Integer id, String email) {
+        storedEmail = email;
+    }
 
     @Override
-    public void deleteEmail(Integer id) { }
+    public void deleteEmail(Integer id) {
+        storedEmail = "";
+    }
 
     @Override
     public Integer createEmail(String email) {
-        return 0;
+        storedEmail = email;
+        return 1;
     }
 }

@@ -7,12 +7,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RepositorioIntegracionTest extends IRepositorioTestTemplate {
-    IDB db;
-
     @Override
     @BeforeEach
     void setup() {
-        db = new DBStub();
+        super.repo = new Repositorio(new DBStub());
     }
 
 }

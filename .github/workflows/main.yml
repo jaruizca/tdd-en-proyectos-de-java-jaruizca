@@ -1,0 +1,25 @@
+name: Deploy Javadoc
+
+on:
+  push:
+    branches:
+      - stable   # Solo cuando se actualice la rama stable
+
+permissions:
+  contents: write   # Necesario para hacer push a gh-pages
+
+jobs:
+  publish-javadoc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout stable
+        uses: actions/checkout@v4
+
+      - name: Deploy javadoc to Github Pages
+        uses: dev-vince/actions-publish-javadoc@v1.0.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          java-version: "21"          # Cambia si usas otra
+          java-distribution: "adopt"  # Ver opciones en setup-java
+          project: maven              # o gradle
+          branch: "gh-pages"          # rama donde se publicará el Javadoc
